@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: var(--bg-primary);
+  --color-surface: var(--bg-secondary);
+  --color-surface-2: var(--bg-tertiary);
+  --color-border: var(--border-primary);
+  --color-border-2: var(--border-secondary);
+  --color-brand: var(--accent-primary);
+  --color-brand-2: var(--accent-secondary);
+  --color-text: var(--text-primary);
+  --color-text-2: var(--text-secondary);
+  --color-text-3: var(--text-tertiary);
+  --color-success: var(--success-color);
+  --color-warning: var(--warning-color);
+  --color-error: var(--error-color);
+}
+
+:root {
+  --bg-primary: #0a0f0d;
+  --bg-secondary: #111a14;
+  --bg-tertiary: #162019;
+  --border-primary: #1e2e24;
+  --border-secondary: #2a3f33;
+  --accent-primary: #3bcf8d;
+  --accent-secondary: #17b374;
+  --text-primary: #ecfdf5;
+  --text-secondary: #a7c4b0;
+  --text-tertiary: #6b9b7e;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+}
+
+.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --accent-primary: #10b981;
+  --accent-secondary: #059669;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+}
+
+.dark {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #252525;
+  --border-primary: #2d2d2d;
+  --border-secondary: #3d3d3d;
+  --accent-primary: #ffffff;
+  --accent-secondary: #e0e0e0;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #808080;
+  --success-color: #ffffff;
+  --warning-color: #a0a0a0;
+  --error-color: #606060;
+}
+
+/* Refined Dark Theme Overrides */
+.dark .shadow-brand/20, .dark .shadow-brand/30 {
+  box-shadow: none !important;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text font-sans transition-all duration-300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+  .bg-surface, .bg-bg, .bg-surface-2, 
+  .border-border, .border-border-2, 
+  .text-text, .text-text-2, .text-text-3 {
+    @apply transition-all duration-300;
+  }
+}
